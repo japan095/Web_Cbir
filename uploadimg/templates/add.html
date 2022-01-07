@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="fw-bold">Add Product</h2>
+                        </div>
+                        <div class="card-body">
+                            <form action="" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Name</label>
+                                    <input type="text" Required name="name" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Descritpion</label>
+                                    <input type="text" Required name="description" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Price</label>
+                                    <input type="text" Required name="price" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Image</label>
+                                    <input type="file" Required name="image" class="form-control">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

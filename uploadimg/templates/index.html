@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <h1>Django Uploading Images</h1>
+    </p>
+
+    {% for score,s in scores %}
+        
+    <figure style="float: left; margin-right: 20px; margin-bottom: 20px;">
+        <img src="{{ s }}" height="200px">
+        <figcaption>{{ s }}</figcaption>
+    </figure>
+              
+    {% endfor %}
+
+    <img src="static\img\1164.jpg" alt="Girl in a jacket" width="500" height="600">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{form.as_p}}
+        <button type="submit">upload</button>
+    </form>
+
+    {% if img_obj %}
+    <h3>Sucessfully uploaded: {{img_obj.title}}</h3>
+    <img src="{{ img_obj.image.url }}" alt="max-height: 300px;"> {% endif %}
+</body>
+</html>
